@@ -33,3 +33,6 @@ import org.tensorflow.lite.support.label.Category;
 
 Here I define Activity binding to use for activity view binding it generates a binding class for each XML layout file in that module. An instance of a critical class contains direct references to all views with an ID in the corresponding layout.
 
+![Picture 1](https://user-images.githubusercontent.com/85448730/208182882-64c4163d-66e5-4f86-b3dd-909a7e6aac51.png)
+
+Broadcast Receivers can send or receive messages from other applications or from the system itself. These messages can be events or intents.
