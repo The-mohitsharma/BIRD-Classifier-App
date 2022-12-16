@@ -39,3 +39,124 @@ Broadcast Receivers can send or receive messages from other applications or from
 
 
 ![Picture 2](https://user-images.githubusercontent.com/85448730/208183134-b01b32c7-b861-4b16-b10b-9508af5467ea.png)
+
+
+registerReceiver(broadCastReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));  // for setting broadcast receiver for battery changes.
+
+View animation to initialised animation in floating action button for 
+Camera and image and viewer;
+ViewAnimation.init(binding.fabCamera); // initialised animation in floating action button for camera.
+ViewAnimation.init(binding.fabImage);// initialised animation in floating action button for image.
+ViewAnimation.init(binding.fabFileViewer);
+
+Creating a condition for checking;
+If 
+{camera permission is allowed or not through the package manager if the camera permission is allowed then it will show in [Binding in image, camera and viewer]
+
+Else 
+{
+It will show out in [Binding in the image, camera, viewer]
+
+Here, I use  setOnClickListener;
+for binding in the image it means setonclicklistener will work 
+Only opening file explorer for a particular image then it will launch the (intent).
+
+Here, I use  setOnClickListener;
+for binding in the camera for showing the camera fragment.
+
+Here, I use  setOnClickListener;
+for binding in the viewer for receiving a string and 
+Put a for loop to recognise the length of the bird, the time elapsed, and battery level.
+{
+   receiveString = receiveString + "Bird Recognised: " + birdRecognised[i] + "\n";
+   receiveString = receiveString + "Time Elapsed: " + timeElapsed[i] + "\n";
+   receiveString = receiveString + "Battery Level: " + batteryLevel[i] + "\n";
+}
+
+
+  Here Activity will be launch means image launch and getting bitmaps 
+From selected images in file explorer.
+Bitmap
+It is a class that represents a 2d coordinate system. The coordinate system moves to the right on the x-axis, and to the bottom on the y-axis. Each point in the coordinate system is called a pixel. A pixel is formed of bits, and bits represent the colour of this pixel. A pixel can be formed of 8, 16 or 24 bits ... The x-axis represents the width, and the y-axis represents the height.
+Why convert images into a bitmap?
+if the image size is too large, it could produce an out-of-memory error. And it is not efficient to load bitmaps larger than the Image View canvas, (unless the Image View supplies custom functionalities such as pinch-to-zoom).
+When the image is too large, or you wish to control its size for better memory optimisation, it must be decoded first into a Bitmap with reasonable metrics:
+After this process image rendering will start for all the selected image will go through a loop too, Recognise the selected image and send them to the adapter.
+private void imageRender(Bitmap[] urls)
+for (int i = 0; i < urls.length; i++) {
+   recognise(urls[i], i);
+}
+
+### Model.tflite;
+1. Add TensorFlow Lite to the Android.
+Right-click on the package name in my case it is com. your package name or click on File, then New > Other > TensorFlow Lite Model. Select the model location where you have downloaded the custom-trained BirdsModel.flite earlier
+Note that the tooling will automatically configure the module’s dependencies for you using ML Model binding and all requirements will be added to your Android module’s build. Gradle file.
+ In the end, you’ll see the following. The BirdModel.flite file has been successfully imported, and it displays high-level model information like input and output and some sample code to get you started.
+After this, I used TensorFlow APIs for trained model recognition.
+Create inputs for references;
+
+Model model = Model.newInstance(context);
+// Creates inputs for reference.
+long initial_time = System.currentTimeMillis();
+TensorImage image = TensorImage.fromBitmap(bitmap);
+Run the trained model to the inference and get the result in the highest probabilities.
+// Runs model inference and gets result.
+Model.Outputs outputs = model.process(image);
+List<Category> probability = outputs.getProbabilityAsCategoryList();
+String data = getHighestProbability(probability);
+long time_elapsed = System.currentTimeMillis();
+
+Releases the trained model resources if it is no longer used.
+// Releases model resources if no longer used.
+model.close();
+Log.d("data_response", data);
+
+
+Here I use the linear search algorithm to calculate the highest 
+Probability with that algorithm, which means we find it will be in floating decimal points or it will be in a string type.
+ String getHighestProbability(List<Category> probability) { // calculating the highest probability with linear search algorithm.
+   float max0 = probability.get(0).getScore();
+   String max1 = probability.get(0).getLabel();
+
+Then we override the process and get a result from the 
+Camera and send it to recognition.
+Using try and catch the exception.
+
+{
+   Toast.makeText(this, "Failed to load", Toast.LENGTH_SHORT)
+           .show();
+   Log.e("Camera", e.toString());
+}
+
+Here I find the current battery level status while processing the multiple images for recognition in one go.
+{ // getting current battery status.
+   int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+   int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+   battery = (float) (level * 100 / scale);
+}
+
+Here I saving all the file with array data as txt formate using try and catch io exception.
+This means when I will take multiple images from file explorer and send them to the adapter to recognise all the selected images then it will execute first all the images according to their time elapsed and then converting into the .txt file.
+
+try {
+       String receiveString = "bird_recognised,time_elapsed,battery_level \n";
+       for (int i = 0; i < birdRecognised.length; i++) {
+           receiveString = receiveString + birdRecognised[i] + ","+ timeElapsed[i]+","+batteryLevel[i]+"\n";
+
+       }
+       OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("csvfile" + System.currentTimeMillis() + ".csv", Context.MODE_PRIVATE));
+       outputStreamWriter.write(receiveString);
+       outputStreamWriter.close();
+       Log.d("test1","rich");
+
+   } catch (IOException e) {
+       Log.e("Exception", "File write failed: " + e.toString());
+   }
+}
+
+
+After arranging all the images according to their time elapsed then it will show a data to be printed in txt file.
+
+final View DialogView = factory.inflate(R.layout.file_opner, null);
+final AlertDialog DialogViewDialog = new AlertDialog.Builder(context).create();
+
