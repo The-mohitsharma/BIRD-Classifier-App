@@ -36,3 +36,6 @@ Here I define Activity binding to use for activity view binding it generates a b
 ![Picture 1](https://user-images.githubusercontent.com/85448730/208182882-64c4163d-66e5-4f86-b3dd-909a7e6aac51.png)
 
 Broadcast Receivers can send or receive messages from other applications or from the system itself. These messages can be events or intents.
+
+
+![Picture 2](https://user-images.githubusercontent.com/85448730/208183134-b01b32c7-b861-4b16-b10b-9508af5467ea.png)
