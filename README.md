@@ -116,6 +116,10 @@ for (int i = 0; i < urls.length; i++) {
 }
 
 ### Model.tflite;
+
+<img width="671" alt="Screenshot 2022-12-17 at 12 58 11 AM" src="https://user-images.githubusercontent.com/85448730/208187582-ed3cb84e-d7e0-402b-99d0-84f5e24d755d.png">
+
+
 1. Add TensorFlow Lite to the Android.
 Right-click on the package name in my case it is com. your package name or click on File, then New > Other > TensorFlow Lite Model. Select the model location where you have downloaded the custom-trained BirdsModel.flite earlier
 Note that the tooling will automatically configure the module’s dependencies for you using ML Model binding and all requirements will be added to your Android module’s build. Gradle file.
