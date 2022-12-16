@@ -6,7 +6,7 @@ so here I will take a tensor flow model from [the tensor flow hub platform] then
 
 Android Studio version: Dolphin|2021.3.1;
 
-Flow chart of the app
+FLOW CHART OF THE APP
 
 ![Unknown](https://user-images.githubusercontent.com/85448730/208182382-7f77a356-25cc-4fe2-b03c-2310ffccdb37.png)
 
