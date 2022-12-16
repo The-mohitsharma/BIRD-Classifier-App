@@ -1,16 +1,11 @@
 # BIRD-Classifier-App
-
-
-
 This Repository Contains the Projects Developed in Andriod(java).
 The primary purpose of this project is to convert a tensor flow model into a tensor flow lite model and run it into the mobile application.
-
-
 so here I will take a tensor flow model from [the tensor flow hub platform] then convert it into a tf life model and download a model.tflite and import it into the android studio.
-
 Android Studio version: Dolphin|2021.3.1;
 
-FLOW CHART OF THE APP
+Flow chart of the app;
+
 
 ![Unknown](https://user-images.githubusercontent.com/85448730/208182382-7f77a356-25cc-4fe2-b03c-2310ffccdb37.png)
 
