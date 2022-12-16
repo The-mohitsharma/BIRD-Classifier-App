@@ -160,3 +160,14 @@ After arranging all the images according to their time elapsed then it will show
 final View DialogView = factory.inflate(R.layout.file_opner, null);
 final AlertDialog DialogViewDialog = new AlertDialog.Builder(context).create();
 
+OUTPUT.
+
+![WhatsApp Image 2022-12-17 at 1 59 06 AM](https://user-images.githubusercontent.com/85448730/208184333-8e6249f8-fddd-46fc-b596-6a2f9afd37a4.jpeg)
+![WhatsApp Image 2022-12-17 at 1 59 07 AM (1)](https://user-images.githubusercontent.com/85448730/208184351-8df9effb-8e12-41a8-96f8-aeac27276fe2.jpeg)
+![WhatsApp Image 2022-12-17 at 1 59 08 AM](https://user-images.githubusercontent.com/85448730/208184361-611e6e98-f7c6-4192-a0d2-cc88a6b248a3.jpeg)
+![WhatsApp Image 2022-12-17 at 1 59 06 AM (1)](https://user-images.githubusercontent.com/85448730/208184367-aef4319b-970f-4fab-8d0e-4fe7cbaf8938.jpeg)
+![WhatsApp Image 2022-12-17 at 1 59 08 AM (1)](https://user-images.githubusercontent.com/85448730/208184368-cca05765-4566-4767-b989-667096ea2331.jpeg)
+![WhatsApp Image 2022-12-17 at 1 59 09 AM (1)](https://user-images.githubusercontent.com/85448730/208184372-3bb5ca66-f7b1-4577-9bde-e8d5b1feaf15.jpeg)
+![WhatsApp Image 2022-12-17 at 1 59 09 AM](https://user-images.githubusercontent.com/85448730/208184377-01f7d1c5-6fc8-4171-963b-37807f30452a.jpeg)
+![WhatsApp Image 2022-12-17 at 1 59 10 AM](https://user-images.githubusercontent.com/85448730/208184379-25a1fd40-b998-4a63-aba2-5bfd8743ca6b.jpeg)
+![WhatsApp Image 2022-12-17 at 1 59 11 AM](https://user-images.githubusercontent.com/85448730/208184382-ceccde1f-70d2-4eb8-9a62-e9d24ef0b4d6.jpeg)
