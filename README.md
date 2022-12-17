@@ -79,12 +79,7 @@ Put a for loop to recognise the length of the bird, the time elapsed, and batter
 
 
 
-{
-   receiveString = receiveString + "Bird Recognised: " + birdRecognised[i] + "\n";
-   receiveString = receiveString + "Time Elapsed: " + timeElapsed[i] + "\n";
-   receiveString = receiveString + "Battery Level: " + batteryLevel[i] + "\n";
-}
-
+![carbon-2](https://user-images.githubusercontent.com/85448730/208246327-7c585d5d-d240-4bfa-8671-fbefa9b52e79.png
 
   Here Activity will be launch means image launch and getting bitmaps 
 From selected images in file explorer.
@@ -102,10 +97,7 @@ When the image is too large, or you wish to control its size for better memory o
 
 
 After this process image rendering will start for all the selected image will go through a loop too, Recognise the selected image and send them to the adapter.
-private void imageRender(Bitmap[] urls)
-for (int i = 0; i < urls.length; i++) {
-   recognise(urls[i], i);
-}
+![carbon-2 copy](https://user-images.githubusercontent.com/85448730/208246334-54b626fd-e112-4bc6-9048-530989a3a3ec.png)
 
 
 
@@ -131,35 +123,22 @@ After this, I used TensorFlow APIs for trained model recognition.
 
 
 
-Model model = Model.newInstance(context);
-**// Creates inputs for reference.**
-long initial_time = System.currentTimeMillis();
-TensorImage image = TensorImage.fromBitmap(bitmap);
-Run the trained model to the inference and get the result in the highest probabilities.
+![carbon-2 copy 2](https://user-images.githubusercontent.com/85448730/208246336-b521e3c3-eb1c-460d-b307-d7bf4e024aef.png)
 
 
 
 
-**// Runs model inference and gets result.**
-Model.Outputs outputs = model.process(image);
-List<Category> probability = outputs.getProbabilityAsCategoryList();
-String data = getHighestProbability(probability);
-long time_elapsed = System.currentTimeMillis();
+![carbon-2 copy 3](https://user-images.githubusercontent.com/85448730/208246343-9a4de32b-f81f-46b1-8e72-21bff093e6ed.png)
    
    
-
-Releases the trained model resources if it is no longer used.
-// Releases model resources if no longer used.
-model.close();
-Log.d("data_response", data);
+![carbon-2 copy 4](https://user-images.githubusercontent.com/85448730/208246344-2fe9f670-fb99-46ba-87fd-d412100ab15a.png)
    
 
 
 Here I use the linear search algorithm to calculate the highest 
 Probability with that algorithm, which means we find it will be in floating decimal points or it will be in a string type.
  String getHighestProbability(List<Category> probability) { // calculating the highest probability with linear search algorithm.
-   float max0 = probability.get(0).getScore();
-   String max1 = probability.get(0).getLabel();
+  ![carbon-2 copy 5](https://user-images.githubusercontent.com/85448730/208246346-55c044c6-d1f0-4eed-a214-eb6cad1ac949.png)
    
    
 
@@ -176,11 +155,8 @@ Using try and catch the exception.
    
 
 Here I find the current battery level status while processing the multiple images for recognition in one go.
-{ // getting current battery status.
-   int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-   int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-   battery = (float) (level * 100 / scale);
-}
+
+![carbon-2 copy 6](https://user-images.githubusercontent.com/85448730/208246349-92f728b6-e04a-4028-b3e4-2a77afaaabc4.png)
    
    
    
@@ -190,29 +166,7 @@ This means when I will take multiple images from file explorer and send them to 
 
    
    
-try {
-       String receiveString = "bird_recognised,time_elapsed,battery_level \n";
-       for (int i = 0; i < birdRecognised.length; i++) {
-           receiveString = receiveString + birdRecognised[i] + ","+ timeElapsed[i]+","+batteryLevel[i]+"\n";
-
-       }
-                                                 
-                                                 
-                                                 
-       OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("csvfile" + System.currentTimeMillis() + ".csv", Context.MODE_PRIVATE));
-       outputStreamWriter.write(receiveString);
-       outputStreamWriter.close();
-       Log.d("test1","rich");
-
-   } 
-        
-                                                 
-                                                 
-                                                 
-                                                 catch (IOException e) {
-       Log.e("Exception", "File write failed: " + e.toString());
-   }
-}
+![carbon-1](https://user-images.githubusercontent.com/85448730/208246481-2345b0e1-1361-4d31-ae7d-0e835df9e46e.png)
 
                                                  
 
