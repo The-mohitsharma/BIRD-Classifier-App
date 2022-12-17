@@ -1,10 +1,6 @@
 # BIRD-Classifier-App
 This Repository Contains the Projects Developed in Andriod(java).
 The primary purpose of this project is to convert a tensor flow model into a tensor flow lite model and run it into the mobile application.
-so here I will take a tensor flow model from [the tensor flow hub platform] then convert it into a tf life model and download a model.tflite and import it into the android studio.
-Android Studio version: Dolphin|2021.3.1;
-
-**Flow chart of the app**;
 
 ## Tech Stack
 
@@ -15,39 +11,40 @@ Android Studio version: Dolphin|2021.3.1;
 **Platform:** Andriod studio.
 
 
+## Acknowledgements and Installation
 
-![Unknown](https://user-images.githubusercontent.com/85448730/208182382-7f77a356-25cc-4fe2-b03c-2310ffccdb37.png)
-
-**First I initialised the package name.
+ **First I initialised the package name.
 (package com.mohit.birdsclassification;)**
 
 
 **Second, I import the essential libraries Import libraries - It can include everything needed to build an app, including source code, resource files, and an Android manifest  like;**
 
 
-
+{
 **import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;**
+}
 
 
-
-**import com.mohit.birdsclassification.adapters.ProcessedImageAdapter;
+{ **import com.mohit.birdsclassification.adapters.ProcessedImageAdapter;
 import com.mohit.birdsclassification.databinding.ActivityMainBinding;
 import com.mohit.birdsclassification.ml.Model;
 import com.mohit.birdsclassification.utils.ViewAnimation;**
+}
 
-
-**Third I import the tf lite library to support the (Tensor image & label category)
+{ **Third I import the tf lite library to support the (Tensor image & label category)
 import org.tensorflow.lite.support.image.TensorImage;
 import org.tensorflow.lite.support.label.Category;**
-
+}
 
 Here I define Activity binding to use for activity view binding it generates a binding class for each XML layout file in that module. An instance of a critical class contains direct references to all views with an ID in the corresponding layout.
 
 ![Picture 1](https://user-images.githubusercontent.com/85448730/208182882-64c4163d-66e5-4f86-b3dd-909a7e6aac51.png)
+
+## DEPLOYMENT
 
 **Broadcast Receivers can send or receive messages from other applications or from the system itself. These messages can be events or intents.**
 
@@ -124,10 +121,17 @@ for (int i = 0; i < urls.length; i++) {
    recognise(urls[i], i);
 }
 
+
+
+## Support And TensorFlow Trained Model
+
 ### Model.tflite;
+
 
 <img width="671" alt="Screenshot 2022-12-17 at 12 58 11 AM" src="https://user-images.githubusercontent.com/85448730/208187582-ed3cb84e-d7e0-402b-99d0-84f5e24d755d.png">
 
+
+## Optimizations
 
 1. **Add TensorFlow Lite to the Android.**
 Right-click on the package name in my case it is com. your package name or click on File, then New > Other > TensorFlow Lite Model. Select the model location where you have downloaded the custom-trained BirdsModel.flite earlier
@@ -231,7 +235,7 @@ After arranging all the images according to their time elapsed then it will show
 final View DialogView = factory.inflate(R.layout.file_opner, null);
 final AlertDialog DialogViewDialog = new AlertDialog.Builder(context).create();
 
-**OUTPUT**.
+## OUTPUT and RESULT
 
 ![WhatsApp Image 2022-12-17 at 1 59 06 AM](https://user-images.githubusercontent.com/85448730/208184333-8e6249f8-fddd-46fc-b596-6a2f9afd37a4.jpeg)
                                                                                   
@@ -250,3 +254,4 @@ final AlertDialog DialogViewDialog = new AlertDialog.Builder(context).create();
 ![WhatsApp Image 2022-12-17 at 1 59 10 AM](https://user-images.githubusercontent.com/85448730/208184379-25a1fd40-b998-4a63-aba2-5bfd8743ca6b.jpeg)
                                                  
 ![WhatsApp Image 2022-12-17 at 1 59 11 AM](https://user-images.githubusercontent.com/85448730/208184382-ceccde1f-70d2-4eb8-9a62-e9d24ef0b4d6.jpeg)
+
