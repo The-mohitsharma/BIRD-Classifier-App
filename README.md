@@ -24,26 +24,10 @@ The primary purpose of this project is to convert a tensor flow model into a ten
 
 Second, I import the essential libraries Import libraries - It can include everything needed to build an app, including source code, resource files, and an Android manifest  like;
 
+![carbon](https://user-images.githubusercontent.com/85448730/208245994-cb8a3bb8-991f-4503-bc0b-85e7580f8ce8.png)
 
-{
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-}
-
-
-{ import com.mohit.birdsclassification.adapters.ProcessedImageAdapter;
-import com.mohit.birdsclassification.databinding.ActivityMainBinding;
-import com.mohit.birdsclassification.ml.Model;
-import com.mohit.birdsclassification.utils.ViewAnimation;
-}
-
-{ Third I import the tf lite library to support the (Tensor image & label category)
-import org.tensorflow.lite.support.image.TensorImage;
-import org.tensorflow.lite.support.label.Category;
-}
+Third I import the tf lite library to support the (Tensor image & label category)
+![carbon-2](https://user-images.githubusercontent.com/85448730/208246005-ab79919d-5ad9-4b15-bb6a-2f4327f3c03d.png)
 
 Here I define Activity binding to use for activity view binding it generates a binding class for each XML layout file in that module. An instance of a critical class contains direct references to all views with an ID in the corresponding layout.
 
@@ -64,10 +48,7 @@ Camera and image and viewer;
 
 
 
-ViewAnimation.init(binding.fabCamera); // initialised animation in floating action button for camera.
-ViewAnimation.init(binding.fabImage);// initialised animation in floating action button for image.
-ViewAnimation.init(binding.fabFileViewer);
-
+![carbon-2 copy](https://user-images.githubusercontent.com/85448730/208246010-b7b3f1ab-3b59-4563-b8e7-900244c3b275.png)
 
 Creating a condition for checking;
 
