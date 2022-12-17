@@ -11,6 +11,11 @@ The primary purpose of this project is to convert a tensor flow model into a ten
 **Platform:** Andriod studio.
 
 
+## FLOWCHART OF THE Implementation.
+
+- ![Unknown](https://user-images.githubusercontent.com/85448730/208238358-77c25ba8-2fe6-4fb4-9ba6-ed312abd9477.png)
+
+
 ## Acknowledgements and Installation
 
  First I initialised the package name.
