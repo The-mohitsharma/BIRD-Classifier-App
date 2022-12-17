@@ -4,7 +4,7 @@ The primary purpose of this project is to convert a tensor flow model into a ten
 so here I will take a tensor flow model from [the tensor flow hub platform] then convert it into a tf life model and download a model.tflite and import it into the android studio.
 Android Studio version: Dolphin|2021.3.1;
 
-Flow chart of the app;
+**Flow chart of the app**;
 
 
 ![Unknown](https://user-images.githubusercontent.com/85448730/208182382-7f77a356-25cc-4fe2-b03c-2310ffccdb37.png)
