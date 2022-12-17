@@ -6,41 +6,50 @@ Android Studio version: Dolphin|2021.3.1;
 
 **Flow chart of the app**;
 
+## Tech Stack
+
+**LANGUAGE:** JAVA.
+
+**LIBRARIES:** Tensorflow and Tensorflow lite
+
+**Platform:** Andriod studio.
+
+
 
 ![Unknown](https://user-images.githubusercontent.com/85448730/208182382-7f77a356-25cc-4fe2-b03c-2310ffccdb37.png)
 
-First I initialised the package name.
-(package com.mohit.birdsclassification;) 
+**First I initialised the package name.
+(package com.mohit.birdsclassification;)**
 
 
-Second, I import the essential libraries Import libraries - It can include everything needed to build an app, including source code, resource files, and an Android manifest  like;
+**Second, I import the essential libraries Import libraries - It can include everything needed to build an app, including source code, resource files, and an Android manifest  like;**
 
 
 
-import androidx.activity.result.ActivityResultLauncher;
+**import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
+import androidx.core.content.ContextCompat;**
 
 
 
-import com.mohit.birdsclassification.adapters.ProcessedImageAdapter;
+**import com.mohit.birdsclassification.adapters.ProcessedImageAdapter;
 import com.mohit.birdsclassification.databinding.ActivityMainBinding;
 import com.mohit.birdsclassification.ml.Model;
-import com.mohit.birdsclassification.utils.ViewAnimation;
+import com.mohit.birdsclassification.utils.ViewAnimation;**
 
 
-Third I import the tf lite library to support the (Tensor image & label category)
+**Third I import the tf lite library to support the (Tensor image & label category)
 import org.tensorflow.lite.support.image.TensorImage;
-import org.tensorflow.lite.support.label.Category;
+import org.tensorflow.lite.support.label.Category;**
 
 
 Here I define Activity binding to use for activity view binding it generates a binding class for each XML layout file in that module. An instance of a critical class contains direct references to all views with an ID in the corresponding layout.
 
 ![Picture 1](https://user-images.githubusercontent.com/85448730/208182882-64c4163d-66e5-4f86-b3dd-909a7e6aac51.png)
 
-Broadcast Receivers can send or receive messages from other applications or from the system itself. These messages can be events or intents.
+**Broadcast Receivers can send or receive messages from other applications or from the system itself. These messages can be events or intents.**
 
 
 ![Picture 2](https://user-images.githubusercontent.com/85448730/208183134-b01b32c7-b861-4b16-b10b-9508af5467ea.png)
@@ -48,40 +57,40 @@ Broadcast Receivers can send or receive messages from other applications or from
 
 registerReceiver(broadCastReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));  // for setting broadcast receiver for battery changes.
 
-View animation to initialised animation in floating action button for 
-Camera and image and viewer;
+**View animation to initialised animation in floating action button for 
+Camera and image and viewer;**
 
 
 
-ViewAnimation.init(binding.fabCamera); // initialised animation in floating action button for camera.
+**ViewAnimation.init(binding.fabCamera); // initialised animation in floating action button for camera.
 ViewAnimation.init(binding.fabImage);// initialised animation in floating action button for image.
-ViewAnimation.init(binding.fabFileViewer);
+ViewAnimation.init(binding.fabFileViewer);**
 
 
 Creating a condition for checking;
 
 
 
-If 
-{camera permission is allowed or not through the package manager if the camera permission is allowed then it will show in [Binding in image, camera and viewer]
+**If 
+{camera permission is allowed or not through the package manager if the camera permission is allowed then it will show in [Binding in image, camera and viewer]**
 
-Else 
+**Else 
 {
-It will show out in [Binding in the image, camera, viewer]
+It will show out in [Binding in the image, camera, viewer]**
 
 
 
 
-Here, I use  setOnClickListener;
+**Here, I use  setOnClickListener;**
 for binding in the image it means setonclicklistener will work 
 Only opening file explorer for a particular image then it will launch the (intent).
 
-Here, I use  setOnClickListener;
+**Here, I use  setOnClickListener;**
 for binding in the camera for showing the camera fragment.
 
 
 
-Here, I use  setOnClickListener;
+**Here, I use  setOnClickListener;**
 for binding in the viewer for receiving a string and 
 Put a for loop to recognise the length of the bird, the time elapsed, and battery level.
 
@@ -98,9 +107,9 @@ Put a for loop to recognise the length of the bird, the time elapsed, and batter
 From selected images in file explorer.
 
 
-Bitmap
+**Bitmap**
 It is a class that represents a 2d coordinate system. The coordinate system moves to the right on the x-axis, and to the bottom on the y-axis. Each point in the coordinate system is called a pixel. A pixel is formed of bits, and bits represent the colour of this pixel. A pixel can be formed of 8, 16 or 24 bits ... The x-axis represents the width, and the y-axis represents the height.
-Why convert images into a bitmap?
+**Why convert images into a bitmap?**
 
 
 
@@ -109,7 +118,7 @@ When the image is too large, or you wish to control its size for better memory o
 
 
 
-After this process image rendering will start for all the selected image will go through a loop too, Recognise the selected image and send them to the adapter.
+**After this process image rendering will start for all the selected image will go through a loop too, Recognise the selected image and send them to the adapter.
 private void imageRender(Bitmap[] urls)
 for (int i = 0; i < urls.length; i++) {
    recognise(urls[i], i);
@@ -120,20 +129,20 @@ for (int i = 0; i < urls.length; i++) {
 <img width="671" alt="Screenshot 2022-12-17 at 12 58 11 AM" src="https://user-images.githubusercontent.com/85448730/208187582-ed3cb84e-d7e0-402b-99d0-84f5e24d755d.png">
 
 
-1. Add TensorFlow Lite to the Android.
+1. **Add TensorFlow Lite to the Android.**
 Right-click on the package name in my case it is com. your package name or click on File, then New > Other > TensorFlow Lite Model. Select the model location where you have downloaded the custom-trained BirdsModel.flite earlier
 Note that the tooling will automatically configure the module’s dependencies for you using ML Model binding and all requirements will be added to your Android module’s build. Gradle file.
 
 
 
- In the end, you’ll see the following. The BirdModel.flite file has been successfully imported, and it displays high-level model information like input and output and some sample code to get you started.
+ **In the end, you’ll see the following. The BirdModel.flite file has been successfully imported, and it displays high-level model information like input and output and some sample code to get you started.
 After this, I used TensorFlow APIs for trained model recognition.
-Create inputs for references;
+**Create inputs for references;
 
 
 
 Model model = Model.newInstance(context);
-// Creates inputs for reference.
+**// Creates inputs for reference.**
 long initial_time = System.currentTimeMillis();
 TensorImage image = TensorImage.fromBitmap(bitmap);
 Run the trained model to the inference and get the result in the highest probabilities.
@@ -141,7 +150,7 @@ Run the trained model to the inference and get the result in the highest probabi
 
 
 
-// Runs model inference and gets result.
+**// Runs model inference and gets result.**
 Model.Outputs outputs = model.process(image);
 List<Category> probability = outputs.getProbabilityAsCategoryList();
 String data = getHighestProbability(probability);
@@ -222,7 +231,7 @@ After arranging all the images according to their time elapsed then it will show
 final View DialogView = factory.inflate(R.layout.file_opner, null);
 final AlertDialog DialogViewDialog = new AlertDialog.Builder(context).create();
 
-OUTPUT.
+**OUTPUT**.
 
 ![WhatsApp Image 2022-12-17 at 1 59 06 AM](https://user-images.githubusercontent.com/85448730/208184333-8e6249f8-fddd-46fc-b596-6a2f9afd37a4.jpeg)
                                                                                   
