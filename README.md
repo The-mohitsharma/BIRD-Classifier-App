@@ -13,31 +13,31 @@ The primary purpose of this project is to convert a tensor flow model into a ten
 
 ## Acknowledgements and Installation
 
- **First I initialised the package name.
+ First I initialised the package name.
 (package com.mohit.birdsclassification;)**
 
 
-**Second, I import the essential libraries Import libraries - It can include everything needed to build an app, including source code, resource files, and an Android manifest  like;**
+Second, I import the essential libraries Import libraries - It can include everything needed to build an app, including source code, resource files, and an Android manifest  like;
 
 
 {
-**import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;**
+import androidx.core.content.ContextCompat;
 }
 
 
-{ **import com.mohit.birdsclassification.adapters.ProcessedImageAdapter;
+{ import com.mohit.birdsclassification.adapters.ProcessedImageAdapter;
 import com.mohit.birdsclassification.databinding.ActivityMainBinding;
 import com.mohit.birdsclassification.ml.Model;
-import com.mohit.birdsclassification.utils.ViewAnimation;**
+import com.mohit.birdsclassification.utils.ViewAnimation;
 }
 
-{ **Third I import the tf lite library to support the (Tensor image & label category)
+{ Third I import the tf lite library to support the (Tensor image & label category)
 import org.tensorflow.lite.support.image.TensorImage;
-import org.tensorflow.lite.support.label.Category;**
+import org.tensorflow.lite.support.label.Category;
 }
 
 Here I define Activity binding to use for activity view binding it generates a binding class for each XML layout file in that module. An instance of a critical class contains direct references to all views with an ID in the corresponding layout.
@@ -46,7 +46,7 @@ Here I define Activity binding to use for activity view binding it generates a b
 
 ## DEPLOYMENT
 
-**Broadcast Receivers can send or receive messages from other applications or from the system itself. These messages can be events or intents.**
+Broadcast Receivers can send or receive messages from other applications or from the system itself. These messages can be events or intents.
 
 
 ![Picture 2](https://user-images.githubusercontent.com/85448730/208183134-b01b32c7-b861-4b16-b10b-9508af5467ea.png)
@@ -54,14 +54,14 @@ Here I define Activity binding to use for activity view binding it generates a b
 
 registerReceiver(broadCastReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));  // for setting broadcast receiver for battery changes.
 
-**View animation to initialised animation in floating action button for 
-Camera and image and viewer;**
+View animation to initialised animation in floating action button for 
+Camera and image and viewer;
 
 
 
-**ViewAnimation.init(binding.fabCamera); // initialised animation in floating action button for camera.
+ViewAnimation.init(binding.fabCamera); // initialised animation in floating action button for camera.
 ViewAnimation.init(binding.fabImage);// initialised animation in floating action button for image.
-ViewAnimation.init(binding.fabFileViewer);**
+ViewAnimation.init(binding.fabFileViewer);
 
 
 Creating a condition for checking;
@@ -106,7 +106,7 @@ From selected images in file explorer.
 
 **Bitmap**
 It is a class that represents a 2d coordinate system. The coordinate system moves to the right on the x-axis, and to the bottom on the y-axis. Each point in the coordinate system is called a pixel. A pixel is formed of bits, and bits represent the colour of this pixel. A pixel can be formed of 8, 16 or 24 bits ... The x-axis represents the width, and the y-axis represents the height.
-**Why convert images into a bitmap?**
+**Why convert images into a bitmap?
 
 
 
@@ -115,7 +115,7 @@ When the image is too large, or you wish to control its size for better memory o
 
 
 
-**After this process image rendering will start for all the selected image will go through a loop too, Recognise the selected image and send them to the adapter.
+After this process image rendering will start for all the selected image will go through a loop too, Recognise the selected image and send them to the adapter.
 private void imageRender(Bitmap[] urls)
 for (int i = 0; i < urls.length; i++) {
    recognise(urls[i], i);
